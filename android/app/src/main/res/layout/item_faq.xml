@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="8dp"
+    app:cardBackgroundColor="@color/navy_card"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="0dp"
+    app:strokeColor="@color/divider"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Question row — always visible, acts as the expand/collapse trigger -->
+        <LinearLayout
+            android:id="@+id/ll_faq_question_row"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="12dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="48dp">
+
+            <TextView
+                android:id="@+id/tv_faq_question"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="What activities count toward my score?"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif"
+                android:layout_marginEnd="8dp"
+                tools:ignore="HardcodedText" />
+
+            <ImageView
+                android:id="@+id/iv_faq_expand"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_add_circle_24"
+                android:contentDescription="Expand"
+                android:importantForAccessibility="yes"
+                app:tint="@color/accent_blue" />
+
+        </LinearLayout>
+
+        <!-- Answer text — initially GONE, shown when expanded -->
+        <TextView
+            android:id="@+id/tv_faq_answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="14dp"
+            android:text="Steps, water intake, yoga/meditation, workout time, and sugar-free days all count toward your daily score."
+            android:textSize="13sp"
+            android:textColor="@color/steel_blue"
+            android:fontFamily="sans-serif"
+            android:lineSpacingMultiplier="1.4"
+            tools:ignore="HardcodedText"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

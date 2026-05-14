@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/deep_navy"
+    android:fillViewport="true"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- ── 2-column: Total Points + Leaderboard Rank ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_total_points"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                app:cardBackgroundColor="@color/navy_card"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/accent_blue_translucent"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TOTAL POINTS"
+                        android:textSize="10sp"
+                        android:textColor="@color/muted_blue"
+                        android:fontFamily="sans-serif"
+                        android:letterSpacing="0.08"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/tv_total_points"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="1,240"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/accent_blue"
+                        android:fontFamily="sans-serif"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="points earned"
+                        android:textSize="11sp"
+                        android:textColor="@color/steel_blue"
+                        android:fontFamily="sans-serif"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_rank_progress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                app:cardBackgroundColor="@color/navy_card"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LEADERBOARD"
+                        android:textSize="10sp"
+                        android:textColor="@color/muted_blue"
+                        android:fontFamily="sans-serif"
+                        android:letterSpacing="0.08"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/tv_rank_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="#5"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:fontFamily="sans-serif"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="current rank"
+                        android:textSize="11sp"
+                        android:textColor="@color/steel_blue"
+                        android:fontFamily="sans-serif"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <!-- ── 2-column: Current Streak + Best Streak ── -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_current_streak"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                app:cardBackgroundColor="@color/warning_bg"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/amber"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🔥 CURRENT"
+                        android:textSize="10sp"
+                        android:textColor="@color/amber"
+                        android:fontFamily="sans-serif"
+                        android:letterSpacing="0.08"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/tv_current_streak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="12"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/amber"
+                        android:fontFamily="sans-serif"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="day streak"
+                        android:textSize="11sp"
+                        android:textColor="@color/amber"
+                        android:fontFamily="sans-serif"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_best_streak"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                app:cardBackgroundColor="@color/navy_card"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="⭐ BEST"
+                        android:textSize="10sp"
+                        android:textColor="@color/gold"
+                        android:fontFamily="sans-serif"
+                        android:letterSpacing="0.08"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/tv_best_streak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="18"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/gold"
+                        android:fontFamily="sans-serif"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="best streak"
+                        android:textSize="11sp"
+                        android:textColor="@color/steel_blue"
+                        android:fontFamily="sans-serif"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <!-- ── Section: Activity Breakdown ── -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:text="ACTIVITY BREAKDOWN"
+            android:textSize="11sp"
+            android:textColor="@color/muted_blue"
+            android:fontFamily="sans-serif"
+            android:letterSpacing="0.08"
+            tools:ignore="HardcodedText" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_breakdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/navy_card"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Steps row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="👟 Steps"
+                            android:textSize="13sp"
+                            android:textColor="@color/white"
+                            android:fontFamily="sans-serif"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/tv_steps_avg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="32 pts avg"
+                            android:textSize="12sp"
+                            android:textColor="@color/teal"
+                            android:fontFamily="sans-serif"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+                    <ProgressBar
+                        android:id="@+id/pb_steps_breakdown"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:layout_marginTop="6dp"
+                        android:progress="80"
+                        android:max="100"
+                        android:progressTint="@color/accent_blue"
+                        android:progressBackgroundTint="@color/divider"
+                        android:indeterminate="false" />
+
+                </LinearLayout>
+
+                <!-- Water row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="💧 Water"
+                            android:textSize="13sp"
+                            android:textColor="@color/white"
+                            android:fontFamily="sans-serif"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/tv_water_avg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="16 pts avg"
+                            android:textSize="12sp"
+                            android:textColor="@color/teal"
+                            android:fontFamily="sans-serif"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+                    <ProgressBar
+                        android:id="@+id/pb_water_breakdown"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:layout_marginTop="6dp"
+                        android:progress="60"
+                        android:max="100"
+                        android:progressTint="@color/teal"
+                        android:progressBackgroundTint="@color/divider"
+                        android:indeterminate="false" />
+
+                </LinearLayout>
+
+                <!-- Yoga row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🧘 Yoga"
+                            android:textSize="13sp"
+                            android:textColor="@color/white"
+                            android:fontFamily="sans-serif"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/tv_yoga_avg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="12 pts avg"
+                            android:textSize="12sp"
+                            android:textColor="@color/teal"
+                            android:fontFamily="sans-serif"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+                    <ProgressBar
+                        android:id="@+id/pb_yoga_breakdown"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:layout_marginTop="6dp"
+                        android:progress="45"
+                        android:max="100"
+                        android:progressTint="@color/amber"
+                        android:progressBackgroundTint="@color/divider"
+                        android:indeterminate="false" />
+
+                </LinearLayout>
+
+                <!-- Workout row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🏋️ Workout"
+                            android:textSize="13sp"
+                            android:textColor="@color/white"
+                            android:fontFamily="sans-serif"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/tv_workout_avg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="22 pts avg"
+                            android:textSize="12sp"
+                            android:textColor="@color/teal"
+                            android:fontFamily="sans-serif"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+                    <ProgressBar
+                        android:id="@+id/pb_workout_breakdown"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:layout_marginTop="6dp"
+                        android:progress="70"
+                        android:max="100"
+                        android:progressTint="@color/accent_blue2"
+                        android:progressBackgroundTint="@color/divider"
+                        android:indeterminate="false" />
+
+                </LinearLayout>
+
+                <!-- Sugar-free row -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="🍭 Sugar-Free"
+                            android:textSize="13sp"
+                            android:textColor="@color/white"
+                            android:fontFamily="sans-serif"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/tv_sugar_avg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="8 pts avg"
+                            android:textSize="12sp"
+                            android:textColor="@color/teal"
+                            android:fontFamily="sans-serif"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+                    <ProgressBar
+                        android:id="@+id/pb_sugar_breakdown"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="6dp"
+                        android:layout_marginTop="6dp"
+                        android:progress="55"
+                        android:max="100"
+                        android:progressTint="@color/teal"
+                        android:progressBackgroundTint="@color/divider"
+                        android:indeterminate="false" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ── Section: Last 7 Days chart ── -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:text="LAST 7 DAYS"
+            android:textSize="11sp"
+            android:textColor="@color/muted_blue"
+            android:fontFamily="sans-serif"
+            android:letterSpacing="0.08"
+            tools:ignore="HardcodedText" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_weekly_chart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/navy_card"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="14dp">
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/bar_chart_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ── Section: Recent Logs ── -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:text="RECENT LOGS"
+            android:textSize="11sp"
+            android:textColor="@color/muted_blue"
+            android:fontFamily="sans-serif"
+            android:letterSpacing="0.08"
+            tools:ignore="HardcodedText" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_recent_logs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_log_history_row" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

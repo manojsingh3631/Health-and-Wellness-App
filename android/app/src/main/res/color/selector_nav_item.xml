@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Bottom navigation icon/text tint selector.
+    Active (checked) state: accent_blue.
+    Default (inactive) state: muted_blue.
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:state_checked="true"
+        android:color="@color/accent_blue" />
+
+    <item
+        android:color="@color/muted_blue" />
+
+</selector>
